@@ -6,20 +6,23 @@ on:
       - main
 
 permissions:
+  contents: write
   pages: write
-  contents: read
+  id-token: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: actions/configure-pages@v4
-        with:
-          enablement: enable
-      - uses: actions/upload-pages-artifact@v5
-        with:
-          path: ./
-      - uses: actions/deploy-pages@v5
+      - name: Deploy to gh-pages
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git checkout --orphan gh-pages
+          git rm -rf .
+          git checkout HEAD -- index.html styles.css script.js checkout.html cart.html product.html logo.svg README_SITE.md
+          rm -rf .github
+          git add .
+          git commit -m "Deploy site to gh-pages" || echo "No changes to commit"
+          git push --force origin gh-pages
