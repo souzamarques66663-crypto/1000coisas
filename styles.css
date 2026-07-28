@@ -86,7 +86,15 @@ body{
 .contact-form input,.contact-form textarea{background:#0a0a0a;border:1px solid rgba(255,255,255,0.04);padding:12px;border-radius:8px;color:var(--text)}
 
 .site-footer{border-top:1px solid rgba(255,255,255,0.03);padding:1.25rem 0;margin-top:2rem}
-.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap}
+.footer-brand{display:flex;flex-direction:column;gap:0.35rem}
+.footer-links{display:flex;flex-wrap:wrap;gap:0.7rem;margin-top:0.5rem}
+.social-link{display:inline-flex;align-items:center;gap:0.5rem;padding:0.7rem 0.85rem;border-radius:999px;background:rgba(255,255,255,0.04);color:var(--text);text-decoration:none;border:1px solid rgba(255,255,255,0.06);transition:transform .16s ease, background .16s ease}
+.social-link:hover{transform:translateY(-2px);background:rgba(255,255,255,0.08)}
+.social-icon{width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.social-icon svg{width:100%;height:100%}
+.social-label{font-size:0.95rem}
+.footer-copy{display:flex;align-items:center}
 
 /* Reveal animations */
 .reveal{opacity:0;transform:translateY(18px) scale(.995);transition:opacity .7s cubic-bezier(.2,.9,.2,1),transform .7s cubic-bezier(.2,.9,.2,1)}
