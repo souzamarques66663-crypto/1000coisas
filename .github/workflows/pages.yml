@@ -19,10 +19,12 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
+          git fetch origin main:main
+          mkdir -p /tmp/site
+          cp index.html styles.css script.js checkout.html cart.html product.html logo.svg README_SITE.md /tmp/site/ || true
           git checkout --orphan gh-pages
-          git rm -rf .
-          git checkout HEAD -- index.html styles.css script.js checkout.html cart.html product.html logo.svg README_SITE.md
-          rm -rf .github
+          git rm -rf . || true
+          cp -r /tmp/site/* . 2>/dev/null || true
           git add .
           git commit -m "Deploy site to gh-pages" || echo "No changes to commit"
           git push --force origin gh-pages
