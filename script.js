@@ -1,6 +1,6 @@
 // script.js — gerencia carrinho, animações, produtos e checkout
 const PRODUCTS = [
-  {sku:'x1000', name:'Fone X1000', price:599, desc:'Fones de alta fidelidade com cancelamento de ruído.'},
+  {sku:'kaidi777', name:'Fone Kaidi 777', price:120, desc:'Fone destaque com som imersivo e bateria de longa duração.'},
   {sku:'swpro', name:'Smart Watch Pro', price:1299, desc:'Relógio inteligente com monitoramento avançado.'},
   {sku:'console', name:'Console NovaGen', price:2499, desc:'Console de última geração com jogos exclusivos.'},
   {sku:'tv55', name:'TV OLED 55"', price:4299, desc:'Televisão OLED com cores imersivas e HDR.'},
@@ -80,7 +80,30 @@ function renderCartItems(){ const itemsContainer = document.getElementById('cart
 }
 
 // Expose a function to render the product page
-function renderProductPage(sku){ const p = getProductBySku(sku); if(!p) return; const nameEl = document.getElementById('product-name'); const priceEl = document.getElementById('product-price'); const descEl = document.getElementById('product-desc'); const mediaEl = document.getElementById('product-media'); const addBtn = document.getElementById('add-to-cart'); if(nameEl) nameEl.textContent = p.name; if(priceEl) priceEl.textContent = `R$ ${formatMoney(p.price)}`; if(descEl) descEl.textContent = p.desc; if(mediaEl) mediaEl.innerHTML = `<svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg"><rect width="320" height="220" rx="14" fill="#0f0f0f"/><circle cx="260" cy="60" r="26" fill="#FFD400"/></svg>`;
+function renderProductPage(sku){ const p = getProductBySku(sku); if(!p) return; const nameEl = document.getElementById('product-name'); const priceEl = document.getElementById('product-price'); const descEl = document.getElementById('product-desc'); const mediaEl = document.getElementById('product-media'); const addBtn = document.getElementById('add-to-cart'); if(nameEl) nameEl.textContent = p.name; if(priceEl) priceEl.textContent = `R$ ${formatMoney(p.price)}`; if(descEl) descEl.textContent = p.desc; if(mediaEl) {
+    if (sku === 'kaidi777') {
+      mediaEl.innerHTML = `
+        <div class="product-gallery">
+          <img class="product-gallery-main" src="images/kaidi-1.jpg" alt="Fone Kaidi 777 vista frontal" />
+          <div class="product-gallery-thumbs">
+            <button class="gallery-thumb active" type="button" data-image="images/kaidi-1.jpg" aria-label="Ver foto 1"><img src="images/kaidi-1.jpg" alt="Foto 1 do Kaidi" /></button>
+            <button class="gallery-thumb" type="button" data-image="images/kaidi-2.jpg" aria-label="Ver foto 2"><img src="images/kaidi-2.jpg" alt="Foto 2 do Kaidi" /></button>
+            <button class="gallery-thumb" type="button" data-image="images/kaidi-3.jpg" aria-label="Ver foto 3"><img src="images/kaidi-3.jpg" alt="Foto 3 do Kaidi" /></button>
+          </div>
+        </div>
+      `;
+      const mainImage = mediaEl.querySelector('.product-gallery-main');
+      mediaEl.querySelectorAll('.gallery-thumb').forEach((thumb) => {
+        thumb.addEventListener('click', () => {
+          mediaEl.querySelectorAll('.gallery-thumb').forEach((item) => item.classList.remove('active'));
+          thumb.classList.add('active');
+          if (mainImage) mainImage.src = thumb.dataset.image;
+        });
+      });
+    } else {
+      mediaEl.innerHTML = `<svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg"><rect width="320" height="220" rx="14" fill="#0f0f0f"/><circle cx="260" cy="60" r="26" fill="#FFD400"/></svg>`;
+    }
+  }
   if(addBtn){ addBtn.addEventListener('click', ()=>{ addToCart({sku:p.sku,name:p.name,price:p.price}); addBtn.textContent='Adicionado'; setTimeout(()=>addBtn.textContent='Adicionar ao carrinho',1300); }); }
   // footer year
   const y3 = document.getElementById('year3'); if(y3) y3.textContent = new Date().getFullYear();
