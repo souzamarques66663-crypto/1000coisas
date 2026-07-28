@@ -11,15 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          persist-credentials: true
           fetch-depth: 0
-      - name: Deploy site to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
+      - uses: actions/configure-pages@v4
+      - uses: actions/upload-pages-artifact@v1
         with:
-          publish_dir: ./
-          publish_branch: gh-pages
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          user_name: github-actions[bot]
-          user_email: github-actions[bot]@users.noreply.github.com
-          commit_message: Deploy static site to gh-pages
+          path: ./
+      - uses: actions/deploy-pages@v1
