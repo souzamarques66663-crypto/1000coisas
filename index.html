@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>1000 Coisas — Loja de Eletrônicos</title>
+    <meta name="description" content="1000 Coisas — Tudo em eletrônicos: tecnologia, inovação e ofertas imperdíveis." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="#">
+          <img src="logo.svg" alt="1000 Coisas" />
+        </a>
+        <nav class="main-nav" aria-label="Navegação principal">
+          <a href="#produtos">Produtos</a>
+          <a href="#novidades">Novidades</a>
+          <a href="#ofertas">Ofertas</a>
+          <a href="#contato">Contato</a>
+        </nav>
+        <div class="actions">
+          <button class="icon-btn search" aria-label="Pesquisar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 19a8 8 0 1 1 5.293-14.293A8 8 0 0 1 11 19z" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="btn-primary" id="cta-hero">Compre Agora</button>
+          <button class="icon-btn cart" aria-label="Carrinho" id="open-cart">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6h15l-1.5 9h-12L6 6z" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1" fill="white"/><circle cx="18" cy="20" r="1" fill="white"/></svg>
+            <span class="cart-count">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy reveal">
+            <h1>1000 Coisas — Tecnologia que conecta você ao futuro</h1>
+            <p class="lead">Os melhores eletrônicos, preço justo e atendimento premium. Entrega rápida para todo o Brasil.</p>
+            <div class="hero-ctas">
+              <button class="btn-primary">Ver lançamentos</button>
+              <a href="#ofertas" class="btn-ghost">Ver ofertas</a>
+            </div>
+          </div>
+          <div class="hero-visual reveal">
+            <svg class="device-mock" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mockup de produto">
+              <rect x="20" y="20" rx="18" ry="18" width="560" height="360" fill="#0b0b0b" stroke="#222" stroke-width="2" />
+              <rect x="80" y="70" rx="12" ry="12" width="440" height="260" fill="#111" />
+              <circle cx="450" cy="120" r="30" fill="#FFD400" />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section id="produtos" class="section container">
+        <header class="section-header reveal">
+          <h2>Produtos em destaque</h2>
+          <p>Seleção curada com os eletrônicos mais buscados.</p>
+        </header>
+
+        <div class="grid products-grid" id="products-list">
+          <!-- Product Card -->
+          <article class="card product-card reveal" data-sku="x1000">
+            <div class="card-media">
+              <div class="badge promo">-20%</div>
+              <svg class="product-illustration" viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" rx="12" fill="#0f0f0f"/><circle cx="160" cy="40" r="18" fill="#FFD400"/></svg>
+            </div>
+            <div class="card-body">
+              <h3 class="prod-name">Fone X1000</h3>
+              <p class="price" data-price="599">R$ 599 <span class="price-old">R$ 749</span></p>
+              <button class="btn-outline add-btn">Adicionar</button>
+            </div>
+          </article>
+
+          <article class="card product-card reveal" data-sku="swpro">
+            <div class="card-media">
+              <div class="badge new">Novo</div>
+              <svg class="product-illustration" viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" rx="12" fill="#0f0f0f"/><rect x="30" y="30" width="100" height="70" fill="#222" rx="8"/></svg>
+            </div>
+            <div class="card-body">
+              <h3 class="prod-name">Smart Watch Pro</h3>
+              <p class="price" data-price="1299">R$ 1.299</p>
+              <button class="btn-outline add-btn">Adicionar</button>
+            </div>
+          </article>
+
+          <article class="card product-card reveal" data-sku="console">
+            <div class="card-media">
+              <div class="badge promo">-15%</div>
+              <svg class="product-illustration" viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" rx="12" fill="#0f0f0f"/></svg>
+            </div>
+            <div class="card-body">
+              <h3 class="prod-name">Console NovaGen</h3>
+              <p class="price" data-price="2499">R$ 2.499 <span class="price-old">R$ 2.999</span></p>
+              <button class="btn-outline add-btn">Adicionar</button>
+            </div>
+          </article>
+
+          <article class="card product-card reveal" data-sku="tv55">
+            <div class="card-media">
+              <div class="badge">Top</div>
+              <svg class="product-illustration" viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" rx="12" fill="#0f0f0f"/></svg>
+            </div>
+            <div class="card-body">
+              <h3 class="prod-name">TV OLED 55"</h3>
+              <p class="price" data-price="4299">R$ 4.299</p>
+              <button class="btn-outline add-btn">Adicionar</button>
+            </div>
+          </article>
+
+          <article class="card product-card reveal" data-sku="notebook">
+            <div class="card-media">
+              <div class="badge promo">-30%</div>
+              <svg class="product-illustration" viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" rx="12" fill="#0f0f0f"/></svg>
+            </div>
+            <div class="card-body">
+              <h3 class="prod-name">Notebook Ultra</h3>
+              <p class="price" data-price="3199">R$ 3.199 <span class="price-old">R$ 4.599</span></p>
+              <button class="btn-outline add-btn">Adicionar</button>
+            </div>
+          </article>
+
+          <article class="card product-card reveal" data-sku="speaker">
+            <div class="card-media">
+              <div class="badge">Bestseller</div>
+              <svg class="product-illustration" viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" rx="12" fill="#0f0f0f"/></svg>
+            </div>
+            <div class="card-body">
+              <h3 class="prod-name">Caixa de Som Max</h3>
+              <p class="price" data-price="399">R$ 399</p>
+              <button class="btn-outline add-btn">Adicionar</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="ofertas" class="section offers">
+        <div class="container reveal">
+          <h2>Ofertas Relâmpago</h2>
+          <p>Promoções em tempo limitado — aproveite enquanto duram.</p>
+          <div class="offers-grid">
+            <div class="offer-card">
+              <div class="offer-badge">-50%</div>
+              <h3>Fone Rocket</h3>
+              <p class="price">R$ 149</p>
+            </div>
+
+            <div class="offer-card">
+              <div class="offer-badge">-40%</div>
+              <h3>Powerbank 20.000mAh</h3>
+              <p class="price">R$ 89</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" class="section contact container reveal">
+        <h2>Fale conosco</h2>
+        <p>Suporte premium e atendimento rápido.</p>
+        <form class="contact-form">
+          <input type="text" placeholder="Nome" required />
+          <input type="email" placeholder="Email" required />
+          <textarea placeholder="Mensagem" rows="4" required></textarea>
+          <button class="btn-primary">Enviar Mensagem</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>1000 Coisas</strong>
+          <p>Endereço fictício • Atendimento 24/7</p>
+        </div>
+        <div>
+          <p>© <span id="year"></span> 1000 Coisas. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

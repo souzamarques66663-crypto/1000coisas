@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="44" viewBox="0 0 160 44" role="img" aria-label="1000 Coisas logo">
+  <rect width="160" height="44" rx="10" fill="none" />
+  <g transform="translate(8,6)">
+    <circle cx="16" cy="16" r="12" fill="#FFD400" stroke="#000" stroke-width="2" />
+    <text x="40" y="25" font-family="Poppins, sans-serif" font-weight="700" font-size="16" fill="#fff">1000</text>
+    <text x="88" y="25" font-family="Poppins, sans-serif" font-weight="500" font-size="14" fill="#fff">Coisas</text>
+  </g>
+</svg>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Checkout — 1000 Coisas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">
+          <img src="logo.svg" alt="1000 Coisas" />
+        </a>
+        <nav class="main-nav" aria-label="Navegação principal">
+          <a href="index.html#produtos">Produtos</a>
+          <a href="index.html#ofertas">Ofertas</a>
+          <a href="index.html#contato">Contato</a>
+        </nav>
+        <div class="actions">
+          <a class="btn-primary" href="index.html">Continuar comprando</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container section">
+      <h1>Checkout</h1>
+      <div class="checkout-grid">
+        <section class="cart-summary card">
+          <h2>Seu carrinho</h2>
+          <div id="cart-items" class="cart-items">
+            <!-- itens serão renderizados aqui -->
+          </div>
+          <div class="cart-totals">
+            <div>Subtotal</div>
+            <div id="cart-subtotal">R$ 0,00</div>
+          </div>
+        </section>
+
+        <section class="checkout-form card">
+          <h2>Dados do pedido</h2>
+          <form id="order-form">
+            <label>Nome completo<input type="text" id="customer-name" required /></label>
+            <label>Email<input type="email" id="customer-email" required /></label>
+            <label>Endereço<input type="text" id="customer-address" required /></label>
+
+            <fieldset class="payment-method">
+              <legend>Método de pagamento (simulado)</legend>
+              <label><input type="radio" name="payment" value="card" checked/> Cartão</label>
+              <label><input type="radio" name="payment" value="boleto"/> Boleto</label>
+            </fieldset>
+
+            <div class="form-actions">
+              <button class="btn-primary" type="submit">Finalizar Pedido</button>
+              <button class="btn-outline" type="button" id="clear-cart">Limpar Carrinho</button>
+            </div>
+          </form>
+          <div id="order-result" class="order-result" aria-live="polite"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div><strong>1000 Coisas</strong><p>Atendimento 24/7</p></div>
+        <div><p>© <span id="year2"></span> 1000 Coisas.</p></div>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
