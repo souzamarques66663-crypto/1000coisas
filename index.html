@@ -170,6 +170,75 @@
         </div>
       </section>
 
+      <section id="avaliacoes" class="section reviews container reveal">
+        <header class="section-header">
+          <h2>Avaliações do Google</h2>
+          <p>Clientes satisfeitos recomendam a 1000 Coisas.</p>
+        </header>
+
+        <div class="reviews-summary">
+          <div class="reviews-score-card">
+            <div class="reviews-score">4.9</div>
+            <div class="reviews-stars">★★★★★</div>
+            <p>Baseado em 162 avaliações</p>
+            <a class="btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Pra%C3%A7a%20Bacharel%20Fernando%20Braga%20Pereira%20Da%20Rocha%2C%20390%20Jardim%20Miriam%20S%C3%A3o%20Paulo%20-%20SP%2004417-090%20Brasil" target="_blank" rel="noreferrer">Ver no Google</a>
+          </div>
+
+          <div class="reviews-grid">
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>“Atendimento excelente, entrega rápida e produtos com ótima qualidade.”</p>
+              <strong>— Ana P.</strong>
+            </article>
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>“Ótimo preço e equipe muito atenciosa. Recomendo demais!”</p>
+              <strong>— Bruno L.</strong>
+            </article>
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>“Encontrei exatamente o que precisava e ainda recebi suporte rápido.”</p>
+              <strong>— Carla M.</strong>
+            </article>
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>“Loja confiável, organização impecável e produtos bem escolhidos.”</p>
+              <strong>— Diego R.</strong>
+            </article>
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>“Compra simples, atendimento profissional e entrega sem complicação.”</p>
+              <strong>— Elisa T.</strong>
+            </article>
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>“Sempre compro aqui por causa do bom atendimento e das ofertas.”</p>
+              <strong>— Fernando C.</strong>
+            </article>
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>“Fiquei satisfeita com a rapidez e com o cuidado na escolha dos itens.”</p>
+              <strong>— Helena S.</strong>
+            </article>
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>“Muito boa experiência, desde o atendimento até a entrega final.”</p>
+              <strong>— João V.</strong>
+            </article>
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>“Amei a variedade e a atenção dada em cada etapa da compra.”</p>
+              <strong>— Luana F.</strong>
+            </article>
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>“Excelente loja para quem busca praticidade, confiança e bons produtos.”</p>
+              <strong>— Marcelo A.</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section id="contato" class="section contact container reveal">
         <h2>Fale conosco</h2>
         <p>Suporte premium e atendimento rápido.</p>
@@ -181,6 +250,26 @@
         </form>
       </section>
     </main>
+
+    <div class="product-modal" id="product-modal" aria-hidden="true">
+      <div class="product-modal-backdrop" data-close-modal></div>
+      <div class="product-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-product-name">
+        <button class="product-modal-close" type="button" aria-label="Fechar detalhes" data-close-modal>×</button>
+        <div class="product-modal-content">
+          <div class="product-modal-media" id="modal-media"></div>
+          <div class="product-modal-info">
+            <p class="product-modal-tag">Detalhes do produto</p>
+            <h3 id="modal-product-name"></h3>
+            <div class="product-modal-price" id="modal-product-price"></div>
+            <p id="modal-product-desc"></p>
+            <ul id="modal-product-highlights"></ul>
+            <div class="product-modal-actions">
+              <button class="btn-primary" id="modal-add-to-cart">Adicionar ao carrinho</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer class="site-footer">
       <div class="container footer-inner">

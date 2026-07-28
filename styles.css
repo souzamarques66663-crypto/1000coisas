@@ -39,11 +39,11 @@ body{
 .cart{position:relative}
 .cart-count{position:absolute;top:4px;right:2px;background:var(--accent);color:#000;font-weight:700;padding:2px 6px;border-radius:999px;font-size:12px}
 
-.btn-primary{background:var(--accent);color:#000;padding:10px 16px;border-radius:10px;border:0;font-weight:700;cursor:pointer;box-shadow:0 6px 18px rgba(255,212,0,0.08);transition:transform .16s ease, box-shadow .16s ease}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(255,212,0,0.12)}
-.btn-primary:active{transform:translateY(-1px)}
-.btn-ghost{color:var(--text);border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;text-decoration:none}
-.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);padding:8px 12px;border-radius:10px;cursor:pointer}
+.btn-primary{background:var(--accent);color:#000;padding:8px 12px;border-radius:8px;border:0;font-weight:700;cursor:pointer;font-size:0.95rem;box-shadow:0 4px 10px rgba(255,212,0,0.06);transition:transform .16s ease, box-shadow .16s ease}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 16px rgba(255,212,0,0.08)}
+.btn-primary:active{transform:translateY(0)}
+.btn-ghost{color:var(--text);border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;text-decoration:none;font-size:0.95rem}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);padding:7px 11px;border-radius:8px;cursor:pointer;font-size:0.95rem}
 
 .hero{padding:3.25rem 0}
 .hero-inner{display:grid;grid-template-columns:1fr 480px;gap:2rem;align-items:center}
@@ -57,6 +57,8 @@ body{
 
 .products-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
 .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:var(--radius);overflow:hidden;box-shadow:var(--card-shadow);display:flex;flex-direction:column}
+.product-card{cursor:pointer;transition:transform .16s ease, box-shadow .16s ease}
+.product-card:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,0.45)}
 .card-media{position:relative;padding:1rem;display:flex;align-items:center;justify-content:center;height:160px}
 .product-illustration{width:100%;height:100%;max-width:220px}
 .product-image{object-fit:cover;border-radius:12px;max-width:none}
@@ -82,6 +84,34 @@ body{
 .offer-card{background:var(--muted);Padding:1rem;border-radius:10px;flex:1;box-shadow:var(--card-shadow)}
 .offer-badge{background:var(--danger);color:#fff;padding:8px 12px;border-radius:8px;font-weight:700;display:inline-block}
 
+.product-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:80;padding:1rem}
+.product-modal.open{display:flex}
+.product-modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px)}
+.product-modal-dialog{position:relative;z-index:1;width:min(900px,100%);background:var(--surface);border:1px solid rgba(255,255,255,0.08);border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,0.4);padding:1rem}
+.product-modal-close{position:absolute;top:0.75rem;right:0.75rem;background:transparent;border:0;color:var(--text);font-size:1.45rem;cursor:pointer}
+.product-modal-content{display:grid;grid-template-columns:1.05fr .95fr;gap:1rem;align-items:center}
+.product-modal-media{display:flex;flex-direction:column;gap:0.75rem}
+.product-modal-media img{width:100%;max-height:320px;object-fit:cover;border-radius:12px;display:block}
+.modal-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem}
+.modal-thumb{background:transparent;border:2px solid transparent;padding:0;border-radius:10px;overflow:hidden;cursor:pointer}
+.modal-thumb.active{border-color:var(--accent)}
+.modal-thumb img{height:72px;max-height:none;object-fit:cover}
+.product-modal-info{padding:0.3rem 0.2rem}
+.product-modal-tag{margin:0 0 0.35rem;color:var(--accent);font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.12em}
+.product-modal-price{font-size:1.35rem;font-weight:800;margin:0.35rem 0 0.7rem}
+.product-modal-actions{margin-top:0.9rem}
+.product-modal-info ul{margin:0.7rem 0 0;padding-left:1.1rem;color:rgba(255,255,255,0.8)}
+
+.reviews-summary{display:grid;grid-template-columns:280px 1fr;gap:1rem;align-items:start}
+.reviews-score-card{background:linear-gradient(180deg, rgba(255,255,255,0.04), transparent);border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:1.1rem;box-shadow:var(--card-shadow)}
+.reviews-score{font-size:2.4rem;font-weight:800;line-height:1}
+.reviews-stars{color:var(--accent);letter-spacing:0.12em;margin:0.35rem 0 0.55rem}
+.reviews-score-card p{margin:0 0 0.8rem;color:rgba(255,255,255,0.75)}
+.reviews-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0.75rem}
+.review-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05);border-radius:10px;padding:0.95rem}
+.review-card p{margin:0.45rem 0 0.7rem;color:rgba(255,255,255,0.82)}
+.review-card strong{font-size:0.95rem;color:rgba(255,255,255,0.9)}
+
 .contact-form{display:grid;gap:.75rem;max-width:560px}
 .contact-form input,.contact-form textarea{background:#0a0a0a;border:1px solid rgba(255,255,255,0.04);padding:12px;border-radius:8px;color:var(--text)}
 
@@ -89,10 +119,10 @@ body{
 .footer-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap}
 .footer-brand{display:flex;flex-direction:column;gap:0.35rem}
 .footer-links{display:flex;flex-wrap:wrap;gap:0.7rem;margin-top:0.5rem}
-.top-contact-strip{display:flex;justify-content:center;flex-wrap:wrap;gap:0.75rem;padding:0.35rem 0 1rem}
-.top-contact-strip .social-link{background:rgba(255,255,255,0.06);box-shadow:0 6px 18px rgba(0,0,0,0.25)}
-.social-link{display:inline-flex;align-items:center;gap:0.5rem;padding:0.7rem 0.85rem;border-radius:999px;background:rgba(255,255,255,0.04);color:var(--text);text-decoration:none;border:1px solid rgba(255,255,255,0.06);transition:transform .16s ease, background .16s ease}
-.social-link:hover{transform:translateY(-2px);background:rgba(255,255,255,0.08)}
+.top-contact-strip{display:flex;justify-content:center;flex-wrap:wrap;gap:0.6rem;padding:0.35rem 0 1rem}
+.top-contact-strip .social-link{background:rgba(255,255,255,0.03);box-shadow:none}
+.social-link{display:inline-flex;align-items:center;gap:0.45rem;padding:0.5rem 0.7rem;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--text);text-decoration:none;border:1px solid rgba(255,255,255,0.05);transition:transform .16s ease, background .16s ease;font-size:0.92rem}
+.social-link:hover{transform:translateY(-1px);background:rgba(255,255,255,0.06)}
 .social-icon{width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
 .social-icon svg{width:100%;height:100%}
 .social-label{font-size:0.95rem}
@@ -114,7 +144,10 @@ body{
 
 .checkout-form label{display:block;margin-bottom:0.6rem}
 .checkout-form input{width:100%;background:#0a0a0a;border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:8px;color:var(--text)}
-.payment-method{display:flex;gap:0.8rem;border:0;padding:0;margin:0 0 1rem}
+.payment-method{display:flex;flex-wrap:wrap;gap:0.8rem;border:0;padding:0;margin:0 0 1rem}
+.payment-fields{display:none;gap:0.75rem;margin-bottom:1rem}
+.payment-fields.show{display:grid}
+.payment-fields input,.payment-fields select{width:100%;background:#0a0a0a;border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:8px;color:var(--text)}
 .form-actions{display:flex;gap:0.75rem;margin-top:1rem}
 .order-result{margin-top:1rem;padding:0.8rem;border-radius:8px;background:rgba(255,255,255,0.02);display:none}
 .order-result.show{display:block}
@@ -123,10 +156,14 @@ body{
   .hero-inner{grid-template-columns:1fr;}
   .products-grid{grid-template-columns:repeat(2,1fr)}
   .checkout-grid{grid-template-columns:1fr}
+  .reviews-summary{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
 }
 @media (max-width:600px){
   .main-nav{display:none}
   .products-grid{grid-template-columns:1fr}
+  .product-modal-content{grid-template-columns:1fr}
+  .product-modal-dialog{padding:0.85rem}
   .header-inner{gap:.5rem}
   .container{padding:0.75rem}
   .hero{padding:2rem 0}

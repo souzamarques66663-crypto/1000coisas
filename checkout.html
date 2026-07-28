@@ -49,13 +49,27 @@
           <form id="order-form">
             <label>Nome completo<input type="text" id="customer-name" required /></label>
             <label>Email<input type="email" id="customer-email" required /></label>
+            <label>Telefone<input type="tel" id="customer-phone" required /></label>
+            <label>CPF<input type="text" id="customer-cpf" required /></label>
             <label>Endereço<input type="text" id="customer-address" required /></label>
 
             <fieldset class="payment-method">
-              <legend>Método de pagamento (simulado)</legend>
-              <label><input type="radio" name="payment" value="card" checked/> Cartão</label>
-              <label><input type="radio" name="payment" value="boleto"/> Boleto</label>
+              <legend>Método de pagamento</legend>
+              <label><input type="radio" name="payment" value="pix" checked/> Pix</label>
+              <label><input type="radio" name="payment" value="debit"/> Débito</label>
+              <label><input type="radio" name="payment" value="credit"/> Crédito</label>
             </fieldset>
+
+            <div id="card-fields" class="payment-fields">
+              <label>Número do cartão<input type="text" id="card-number" maxlength="19" /></label>
+              <label>Nome no cartão<input type="text" id="card-name" /></label>
+              <label>CVV<input type="text" id="card-cvv" maxlength="4" /></label>
+              <label>Parcelas<select id="card-installments">
+                <option value="1">1x sem juros</option>
+                <option value="2">2x sem juros</option>
+                <option value="3">3x sem juros</option>
+              </select></label>
+            </div>
 
             <div class="form-actions">
               <button class="btn-primary" type="submit">Finalizar Pedido</button>
